@@ -509,7 +509,7 @@ img.logo-image:hover {
         <span class="main-info" data-edit-index="2">udacity</span>
         <input type="text" value="" class="form-control width-80 edit-main-input" data-edit-index="2" style="display:none;">
         <div class="pt-2 pb-2">
-          <button class="btn btn-dark btn-block edit-main-info" data-edit-index="2">Edit</button>
+          <button class="btn btn-light btn-block edit-main-info" data-edit-index="2">Request Edit</button>
           <button class="btn btn-success btn-block save-main-info" data-edit-index="2" style="display:none;">Save</button>
           <button class="btn btn-danger btn-block cancel-main-info" data-edit-index="2" style="display:none;">Cancel</button>
         </div>
@@ -594,11 +594,19 @@ img.logo-image:hover {
     <div class="col-sm-12 rounded-right mb-2 profile-info-bg">
     
       <p class="text-center p-3 text-white">About Us</p>
-      <p class="text-left p-3 text-white editable-item" data-edit-index="4">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+      <p class="text-left p-3 text-white main-info" data-edit-index="5">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
       
       </p>
-
-
+      <textarea class="form-control edit-main-input" rows="4" data-edit-index="5" style="display:none;"></textarea>
+      
+      
+        <div class="pt-2 pb-2">
+          <button class="btn btn-dark btn-block edit-main-info" data-edit-index="5">Edit</button>
+          <button class="btn btn-success btn-block save-main-info" data-edit-index="5" style="display:none;">Save</button>
+          <button class="btn btn-danger btn-block cancel-main-info" data-edit-index="5" style="display:none;">Cancel</button>
+        </div>
+        
+        
 
 
     <!-- Notifications -->
@@ -867,6 +875,8 @@ img.logo-image:hover {
       editInput.style.display = "inline";
       saveBtn.style.display = "";
       cancelBtn.style.display = "";
+      
+      editInput.value = editText.innerText;
       
     }
     
