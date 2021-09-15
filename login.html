@@ -489,9 +489,9 @@ img.logo-image:hover {
               <input type="email" class="form-control" autocomplete="username" placeholder="Enter email" id="email">
             </div>
             <div class="form-group p-relative">
-            <i class="fa fa-eye password-eye" style=""></i>
-             <label for="pwd">Password: </label>
-              <input type="password" class="form-control" id="current-password" autocomplete="current-password" placeholder="Enter password">
+            <i class="fa fa-eye password-eye toggle-passwordi" data-pass-id="current-password"></i>
+             <label for="current-password">Password: </label>
+              <input type="password" class="form-control" id="current-password" autocomplete="current-password" placeholder="Enter password" name="current-password">
             </div>
             
             <div class="text-center pt-3">
@@ -513,191 +513,47 @@ img.logo-image:hover {
  </div>
 <script>
   window.addEventListener('DOMContentLoaded', (event) => {
-    /* Global Variables */
-    const toggleNavBtn = document.querySelector("#toggle_navbtn");
     
-    const navcontainer = document.querySelector("#navmenu_holder");
-    const navmenuMobile = document.querySelector("#mobile_cont");
-    const navmenuDesktop = document.querySelector("#desktop_cont");
-    
-    let toggleIndex = 0;
-    
-    
-    
+    let togglePassIndex = 0;
+    /* signup/login js */
+     function togglePassword(event) {
+       const passwordIBtn = event.target;
+       const passwordInputId = passwordIBtn.getAttribute("data-pass-id");
+       const passwordInput = document.getElementById(passwordInputId);
+       if (passwordInput) {
+         if (togglePassIndex === 0) {
 
-    function toggleNavMobile() {
-      const barIcon = document.querySelector("#bar_icon");
-      const closeIcon = document.querySelector("#close_icon");
-      if (toggleIndex === 0) {
-        navcontainer.style.display = "block";
-        navmenuMobile.classList.add("mobile-navlinks-cont");
-        closeIcon.style.display = "";
-        barIcon.style.display = "none";
-        toggleIndex = 1;
-      } else {
-        navcontainer.style.display = "none";
-        navmenuMobile.classList.remove("mobile-navlinks-cont");
-        closeIcon.style.display = "none";
-        barIcon.style.display = "";
-        toggleIndex = 0;
-      }
-   }
-   
-   /* 
-      This in case testing resize or resize window that make it bigger
-      return mobile menu to default closed
-   */
-   function backMenuDefault() {
-   
-      const barIcon = document.querySelector("#bar_icon");
-      const closeIcon = document.querySelector("#close_icon");
-      if (window.innerWidth > 575 || document.documentElement.clientWidth > 575) {
-        navcontainer.style.display = "none";
-        navmenuMobile.classList.remove("mobile-navlinks-cont");
-        closeIcon.style.display = "none";
-        barIcon.style.display = "";
-        toggleIndex = 0;
-      }
-      /* fix animation mobile too */
-      if (document.querySelector("img.active-img")){
-         const allActiveImages = document.querySelectorAll("img.active-img");
-         allActiveImages.forEach( (activeImg)=>{
-           activeImg.classList.remove("active-img");
-         });
-      }
-      return true;
-   }
-   
-   /* 
-     function to append nav links to the correct nav container
-     according to window width
-   */
-   function navMenuLinksFix() {
-      const allNavMenuLinks = document.querySelectorAll(".movelink");
-      if (window.innerWidth > 575 || document.documentElement.clientWidth > 575) {
-        allNavMenuLinks.forEach( (navLink)=>{
-          navmenuDesktop.appendChild(navLink);
-        });
-      } else {
-        allNavMenuLinks.forEach( (navLink)=>{
-          navmenuMobile.appendChild(navLink);
-        });
-        
-      }
-      return true;
-   }
+           if (passwordIBtn.classList.contains("fa-eye")){
+             passwordIBtn.classList.remove("fa-eye");
+           }
+           if (!passwordIBtn.classList.contains("fa-eye-slash")){
+             passwordIBtn.classList.add("fa-eye-slash");
+           }
+           passwordInput.setAttribute("type", "text");
+           togglePassIndex = 1;
+         } else {
 
-  
-   toggleNavBtn.addEventListener("click", toggleNavMobile);
-   window.addEventListener("resize", backMenuDefault);
-   window.addEventListener("resize", navMenuLinksFix);
-   navMenuLinksFix();
-  
 
-    /* end helper */
-    
-    /* scroll effect */
-      function addImageScrollEffect() {
-        
-        const imagesContainer = document.querySelector("#animation_container");
-        const allImages = document.querySelectorAll(".animation_image");
-        if (window.innerWidth > 575 || document.documentElement.clientWidth > 575) {
-          /* effect for desktop */
-          const containerRect = imagesContainer.getBoundingClientRect();
-          if (containerRect.top >= -20 && containerRect.top <= 300) {
-            allImages.forEach( (image)=>{
-              if (!image.classList.contains("active-img")){
-                 image.classList.add("active-img");
-              }
-            });
-          } else {
-             if (document.querySelector("img.active-img")){
-                allImages.forEach( (image)=>{
-                  if (image.classList.contains("active-img")){
-                     image.classList.remove("active-img");
-                  }
-                });
-             }
-          
-          }
-        } else {
-          /* effect for mobile */
-
-            allImages.forEach( (image)=>{
-              const imageRectTop = image.getBoundingClientRect().top;
-              if (imageRectTop >= -30 && imageRectTop <= 200){
-                if (!image.classList.contains("active-img")){
-                  image.classList.add("active-img");
-                }
-              } else {
-                if (image.classList.contains("active-img")){
-                  image.classList.remove("active-img");
-                }
-              }
-            });
-          
-          }
-
-       return true;
+           if (!passwordIBtn.classList.contains("fa-eye")){
+             passwordIBtn.classList.add("fa-eye");
+           }
+           if (passwordIBtn.classList.contains("fa-eye-slash")){
+             passwordIBtn.classList.remove("fa-eye-slash");
+           }
+           
+           passwordInput.setAttribute("type", "password");
+           togglePassIndex = 0;
+         }
+       }
      }
      
-    if (document.querySelectorAll(".animation_image").length > 0) {
-      window.addEventListener("scroll", addImageScrollEffect);
-    }
-    
-    /* profile js */
-    /* Display Edit inputs main part */
-    
-    function showEditMainInput(event){
-      const editBtn = event.target;
-      const editIndex = editBtn.getAttribute("data-edit-index");
-      const editText = document.querySelector(`.main-info[data-edit-index='${editIndex}']`);
-      const editInput = document.querySelector(`.edit-main-input[data-edit-index='${editIndex}']`);
-      const saveBtn = document.querySelector(`.save-main-info[data-edit-index='${editIndex}']`);
-      const cancelBtn = document.querySelector(`.cancel-main-info[data-edit-index='${editIndex}']`);
-      
-      editBtn.style.display = "none";
-      editText.style.display = "none";
-      editInput.style.display = "inline";
-      saveBtn.style.display = "";
-      cancelBtn.style.display = "";
-      
-      editInput.value = editText.innerText;
-      
-    }
-    
-    /* Hide Edit inputs main part */
-    
-    function HideEditMainInput(event){
-      const cancelBtn = event.target;
-      const cancelIndex = cancelBtn.getAttribute("data-edit-index");
-      const editText = document.querySelector(`.main-info[data-edit-index='${cancelIndex}']`);
-      const editInput = document.querySelector(`.edit-main-input[data-edit-index='${cancelIndex}']`);
-      const saveBtn = document.querySelector(`.save-main-info[data-edit-index='${cancelIndex}']`);
-      const editBtn = document.querySelector(`.edit-main-info[data-edit-index='${cancelIndex}']`);
-      
-      cancelBtn.style.display = "none";
-      editText.style.display = "";
-      editInput.style.display = "none";
-      saveBtn.style.display = "none";
-      editBtn.style.display = "";
-      
-    }    
-    
-    const allEditMainBtns = document.querySelectorAll(".edit-main-info");
-    allEditMainBtns.forEach( (editBtn)=>{
-      editBtn.addEventListener("click", showEditMainInput);
-    });
-
-
-    const allCancelMainBtns = document.querySelectorAll(".cancel-main-info");
-    allCancelMainBtns.forEach( (cancelBtn)=>{
-      cancelBtn.addEventListener("click", HideEditMainInput);
-    });
-    
-    /* profile js end */
-
+     
+    const passwordTogglerId = document.querySelector(".toggle-passwordi");
+    passwordTogglerId.addEventListener("click", togglePassword);
+     
+    /* */
   });
+
 </script>
 </body>
 </html>
