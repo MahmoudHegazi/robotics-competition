@@ -504,6 +504,13 @@ img.logo-image:hover {
             <i class="fa fa-eye password-eye toggle-passwordi" data-pass-id="new-password" style=""></i>
              <label for="new-password">Password: </label>
               <input type="password" class="form-control" id="new-password" autocomplete="new-password" placeholder="Enter password" name="new-password" required>
+              
+              <div class="validation_container">
+                <div class="progress" id="password_validate_bar" style="display:none">
+                  
+                </div>
+                <span class="badge badge-info p-2 mt-2" id="password_validate"></span>
+              </div>
             </div>
             
             
@@ -646,7 +653,82 @@ img.logo-image:hover {
      
     const passwordTogglerId = document.querySelector(".toggle-passwordi");
     passwordTogglerId.addEventListener("click", togglePassword);
+    
+    
+    const passwordInput = document.querySelector("input[type='password']");
+    function valdiatePassJs() {
+       let text = passwordInput.value;
+       const messageSpan = document.querySelector("#password_validate");
+       const progressContainer = document.querySelector("#password_validate_bar");
+       
+       
+        if (text.length == 0) {
+          messageSpan.style.display = "none";
+          messageSpan.innerText = "";
+          progressContainer.style.display = "none";
+          progressContainer.innerHTML = "";
+          return false;
+        }
+      
+      
+       let capital = /(?=.*[A-Z])/.test(text) ? 1 : 0;
+       let small = /(?=.*[a-z])/.test(text) ? 1 : 0;
+       let specialmark = /(?=.*\W)/.test(text) ? 1 : 0;
+       let integer = /(?=.*\d)/.test(text) ? 1 : 0;
+       let length = text.length >= 10 ? 4 : 0;
+       
+       
+       let finalScore = capital + small + specialmark + integer + length;
+       let message = "";
+       let currentBarStatus = "";
+       
+
+       switch(finalScore) {
+         case 1:
+           message = "Very week";
+           currentBarStatus = `<div class="progress-bar bg-danger" style="width:20%"></div>`;
+           break;
+         case 2:
+           message = "Very week";
+           currentBarStatus = `<div class="progress-bar bg-danger" style="width:20%"></div>`;
+           break;
+         case 3:
+           message = "Very week";
+           currentBarStatus = `<div class="progress-bar bg-danger" style="width:20%"></div>`;
+           break;
+         case 4:
+           message = "week";
+           currentBarStatus = `<div class="progress-bar bg-danger" style="width:40%"></div>`;
+           break;
+         case 5:
+           message = "week";
+           currentBarStatus = `<div class="progress-bar bg-danger" style="width:40%"></div>`;
+           break;
+         case 6:
+           message = "Mediam";
+           currentBarStatus = `<div class="progress-bar bg-warning" style="width:60%"></div>`;
+           break;
+         case 7:
+           message = "Strong";
+           currentBarStatus = `<div class="progress-bar bg-success" style="width:80%"></div>`;
+           break;
+         case 8:
+           message = "Very Strong";
+           currentBarStatus = `<div class="progress-bar bg-success" style="width:100%"></div>`;
+           break;
+         default:
+           message = "";
+       }
+          messageSpan.style.display = "";
+          messageSpan.innerText = message;
+          progressContainer.style.display = "";
+          progressContainer.innerHTML = currentBarStatus;
+          
+          
+          return true;
+    }
      
+     passwordInput.addEventListener("keyup", valdiatePassJs);
     /* */
   });
 </script>
