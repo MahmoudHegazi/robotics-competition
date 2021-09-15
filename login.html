@@ -326,6 +326,18 @@ img.logo-image:hover {
     height: 100%;
   }
   
+  .password-eye {
+    position:absolute;
+    top:8px;right:8px;
+    pointer:cursor;
+    font-size:19px;
+    cursor:pointer;
+  }
+  
+  .p-relative {
+    position:relative;
+  }
+  
   /* Login CSS end */
   /* Media query */
   
@@ -449,44 +461,41 @@ img.logo-image:hover {
   </style>
 </head>
 <body id="login_page_body">
- <div class="container-fluid d-flex flex-column justify-content-center align-content-center full-height">
+ <div class="container-fluid full-height">
  
       
-      <div class="row"> 
-       <div class="row col-sm-7" style="border: 1px solid green;margin-left:auto;margin-right:auto;">
+      <div class="row pt-5"> 
+       <div class="row col-sm-7 p-3 mr-auto ml-auto" style="">
           <div class="col-md-12">
-             <div class="row border border-top-3 border-bottom-0">
-               <div class="col-6 text-center border border-3 p-3">SIGN UP</div>
+             <div class="row border border-top-3 shadow bg-white rounded border-bottom-0">
+               <div class="col-6 text-center border border-4 p-3">SIGN UP</div>
                <div class="col-6 text-center p-3">SIGN IN</div>
              </div>
-          </div>
-          
-          <div class="col-md-12 border border-3 border-bottom-0 border-top-0">
-             <div class="text-center">
-               <p>Sign in to your account as you like</p>
-             </div>
-          </div>
-          
+          </div>          
           
            <!-- login form -->
-          <form action="/action_page.php" class="p-3 col-sm-12 border border-3 border-top-0">
+          <form action="/action_page.php" class="col-sm-12 border border-3 border-top-0 shadow p-4 mb-5 bg-white rounded">
+          
+            <p class="p-3 text-center">Sign in to your account as you like</p>
             <div class="form-group">
               <label for="email">Email address:</label>
-              <input type="email" class="form-control" placeholder="Enter email" id="email">
+              <input type="email" class="form-control" autocomplete="username" placeholder="Enter email" id="email">
             </div>
-            <div class="form-group">
-              <label for="pwd">Password:</label>
-              <input type="password" class="form-control" placeholder="Enter password" id="pwd">
+            <div class="form-group p-relative">
+            <i class="fa fa-eye password-eye" style=""></i>
+             <!-- <label for="pwd">Password: </label> -->
+              <input type="password" class="form-control" id="current-password" autocomplete="current-password" placeholder="Enter password" id="pwd">
             </div>
-            <div class="form-group form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox"> Remember me
-              </label>
+            
+            <div class="text-center pt-3">
+              <button type="submit" class="btn btn-primary">SIGN IN</button>
+              
+              <p class="text-center pt-3">By clicking Sign In, you agree to our <a href="terms-of-use.html">Terms of Use</a> and our <a href="privacy.html">Privacy Policy</a>.</p>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
           </form>
          <!-- login form End -->
        </div>
+       
      </div>
        
      
