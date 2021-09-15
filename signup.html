@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en" id="login_page_html">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+    <style>
+
+   html, body {
+     min-height: 100%;
+     height: auto;
+     margin: auto;
+   }
+   
+   /* Home CSS */
+   .navmenu-container {
+     position: sticky;
+     top: 0;
+     left: 0;
+     z-index: 120;
+   }
+  /* Make the image fully responsive */
+  .main_header {
+    height: 100%;
+    padding: 0;
+  }
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .indicators-class {
+    display: none;
+  }
+  /* nav menu */
+  .navmenu {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    color: black;
+    margin: 0;
+    padding: 0;
+    background-size: conver;
+    background-repeat: no-repeat;
+    background: #e6e6e6;
+  }
+  .nav-link{
+    display: block;
+    height: 100%;
+    padding: 12px 18px;
+    cursor: pointer;
+  }
+  .nav-link.hoverable:hover{
+    background: lightgray;
+    color: black;
+  }
+  
+  .nav-toggle {display:none;}
+  
+  .nav-links-cont {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  
+  .mobile-navlinks-cont {display:none;}
+  
+  .toggle-btn {
+    border: 1px solid gray;
+    border-radius: 4px;
+    color: black;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  
+  .toggle-btn:active {
+    background: gray;
+    
+  }
+  
+  .logo-image {
+    border:1px solid #0f59a3;border-radius:5px;box-shadow: 5px 5px 2px #aaaaaa;
+  }
+  
+  .signup-class {
+    margin-left: 4px;
+  }
+  
+  /* nav menu end */
+  .carousel-class {
+    z-index:0;
+    position:relative;
+  }
+  
+  .header-abover{
+    top:-20px;
+    background:rgb(245, 245, 245);
+    z-index:10;
+    position:relative;
+  }
+  .navmenu-holder {display: none;}
+  
+  
+  
+  /* images section */
+  
+  .active-img {
+    position: relative;
+    animation-name: robots;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+  
+  
+  @keyframes robots {
+    0%   {background-color:red; left:0px; bottom:0px;}
+    9% { transform: translate(-1px, -2px) rotate(-2deg);}
+    10%   {background-color:red; left:0px; bottom:2px;}
+    19% { transform: translate(-1px, -2px) rotate(2deg);}
+    20%  {background-color:yellow; left:0px; bottom:4px;}
+    29% { transform: translate(-1px, -2px) rotate(-2deg);}
+    30%  {background-color:yellow; left:0px; bottom:6px;}
+    39% { transform: translate(-1px, -2px) rotate(2deg);}
+    40%  {background-color:yellow; left:0px; bottom:8px;}
+    50%  {background-color:yellow; left:0px; bottom:10px;}
+    60%  {background-color:yellow; left:0px; bottom:12px;}
+    70%  {background-color:yellow; left:0px; bottom:14px;}
+    79% { transform: translate(-1px, -2px) rotate(-4deg);}
+    80%  {background-color:yellow; left:0px; bottom:16px;}
+    99% { transform: translate(-1px, -2px) rotate(4deg);}
+    100%  {background-color:yellow; left:0px; bottom:20px;}
+  }
+  
+img.logo-image:hover {
+  animation: shakelogo 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shakelogo {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-72deg); }
+  20% { transform: translate(-3px, 0px) rotate(-144deg); }
+  30% { transform: translate(3px, 2px) rotate(-216deg); }
+  40% { transform: translate(1px, -1px) rotate(-288deg); }
+  50% { transform: translate(-1px, 2px) rotate(-360deg); }
+  60% { transform: translate(-3px, 1px) rotate(360deg); }
+  70% { transform: translate(3px, 1px) rotate(288deg); }
+  80% { transform: translate(-1px, -1px) rotate(216deg); }
+  90% { transform: translate(1px, 2px) rotate(144deg); }
+  100% { transform: translate(1px, -2px) rotate(72deg); }
+}
+
+
+  /* images section end */
+  /* footer */
+  .footer-class {
+    background: #0f59a3;
+    height: max-content;
+    color: white;
+    
+  }
+  
+  .footer-warper {
+     height: 100%;
+  }
+  
+  .footer-class .social-container {
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    max-width: 250px;
+    margin-left: auto;
+  }
+  .footer-class .social-bar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-top: 5px;
+  }
+  
+    
+  .facebook {
+    background:#0080ff;
+    color:white;
+    width:40px;
+  }
+  .gmail {
+    background:#ffffcc;
+    color:orange;
+  }
+  .twiter {
+    background:#33cccc;
+    color:white;
+  }
+  .instigram {
+    background:#ff80aa;
+    color:white;
+  }
+  
+  /* footer end */
+
+/* End Home CSS */
+  
+  /* Profile CSS */
+  
+  .cover-section {
+    position:relative;
+    height:100%;
+    width: 100%;
+    margin-bottom:70px;
+    /* The image used */
+    background-image: url("https://studentpartnerships.com.au/wp-content/uploads/2014/09/keyboard-background.jpg") !important;
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+  
+  .profile-image {
+    border-radius: 50%;
+    position:relative;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    top:150px;
+  }
+  
+  .camera-icon {color: black;font-size: 17px;}
+  
+  .profile-icon {
+    position:relative;
+    top: 130px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto;
+    background: gray;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: cornflowerblue;
+    cursor: pointer;
+    color: white;
+  }
+  
+  
+  
+  .edit-coverbtn {
+    border: 1px solid blanchedalmond;
+    background: #f8f9fa;
+    display: block;
+    margin-left: auto;
+    position:absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  
+  .edit-coverbtn:focus {
+    border: 1px solid blanchedalmond;
+    background: #f8f9ff;
+  }
+  
+  
+  
+  .edit-coverbtn i::after {
+     content: " Edit Cover Photo";
+  }
+  
+  .data-row {
+    width:99%;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  
+  .personal-data {border-right: 2px solid white;}
+  
+  /* editable */
+  .profile-info-bg {
+    background-color: #555;
+  }
+  
+  /* editable */
+  
+  .personal-icon {color:lightgray;}
+  
+  .notifications-class {
+    min-height: 20px;
+    height: max-content;
+    max-height: 500px;
+    overflow: auto;
+  }
+  
+  .edit-databtn {float:right;cursor:pointer;}
+  
+  .close-databtn, .save-databtn {cursor: pointer;}
+
+  .width-80 {
+    width: 80%;
+  }
+  .height-80 {
+    height: 80%;
+  }
+  .full-height {
+    height: 100%;
+  }
+  /* Profile CSS End */
+  
+  /* Login CSS */
+  #login_page_body, #login_page_html {
+    height: 100%;
+  }
+  
+  .password-eye {
+    position:absolute;
+    top:40px;
+    right:8px;
+    pointer:cursor;
+    font-size:19px;
+    cursor:pointer;
+  }
+  
+  .p-relative {
+    position:relative;
+  }
+  
+  /* Login CSS end */
+  /* Media query */
+  
+  @media only screen and (max-width: 575px) {
+  
+    /* Home CSS */
+  
+    .indicators-class {
+      display: flex;
+      padding-bottom: 10px;
+    }
+    .mobile-navlinks-cont {
+       background: #0f59a3;
+       color: white;
+       display:block;
+    }
+    
+    .nav-link {
+      text-align: center;
+      color: white;
+      border: none;
+    }
+    
+    .signup-class {
+      margin-left: 0;
+    }
+    
+    .login-class:hover {
+      background: lightgray;
+      color:black;
+    }
+    
+    .signup-class:hover{
+      background: lightgray;
+      color:black;   
+    }
+  
+    .nav-logo {
+      display: inline-block;
+    }
+    .nav-toggle {
+      display: inline-block;
+      margin-left: auto;
+    }
+    
+    .carousel-class {
+      min-height: 300px;
+      height: 300px;
+      
+    }
+    .carousel-class div {height: 100%;}
+    
+    /* footer mobile */
+    .footer-warper {
+        text-align: center;
+
+    }
+     .footer-class .form-bar form{
+      display: flex;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .form-bar form input[type=email] {
+      width: 70%;
+    }
+    .form-bar form button {
+      width: 30%;
+    }
+    
+    .footer-class .social-container {
+      margin-top: 15px;
+      max-width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .footer-class .social-bar {
+      margin-top: 5px;
+      width: 100%;
+      margin: 5px;
+      
+    }
+    
+    /* Home CSS end */
+    
+    /* Profile CSS */
+    
+    .cover-section {
+      margin-bottom: 70px;
+    }
+    .profile-image {
+       top:120px;
+    }
+  
+    .profile-icon {
+      top: 100px;
+    
+    }
+    .edit-coverbtn i::after {
+     content: "";
+    }
+    .edit-coverbtn {
+      border: 1px solid gray;
+    }
+    .edit-coverbtn:hover {
+      border: 1px solid gray;
+    } 
+    
+    .edit-coverbtn {
+      top: 10px;
+      bottom: inherit;
+    }
+    
+
+    /* Profile CSS end */
+  }
+  
+  
+  /* media query end */
+  </style>
+</head>
+<body id="login_page_body">
+   <div class="container-fluid border border-3 border-top-0 shadow p-4 bg-white rounded text-center">
+      <div><img src="https://images-platform.99static.com//mgaveJ1iz5D9riVxPYkH_VH78nU=/0x0:1000x1000/fit-in/500x500/99designs-contests-attachments/117/117320/attachment_117320637" width="40" height="10%" class="logo-image">
+      <span class="ml-2 font-weight-bold lead">Robots</span>
+     </div>
+   </div>
+   
+ <div class="container-fluid full-height">
+ 
+
+   
+      <div class="row pt-5"> 
+       <div class="row col-sm-7 p-3 mr-auto ml-auto" style="">
+          <div class="col-md-12">
+             <div class="row border border-top-3 shadow bg-white rounded border-bottom-0">
+               <div class="col-6 text-center border border-4 p-3 bg-light">SIGN UP</div>
+               <div class="col-6 text-center p-3">SIGN IN</div>
+             </div>
+          </div>          
+          
+           <!-- login form -->
+          <form action="/action_page.php" class="col-sm-12 border border-3 border-top-0 shadow p-4 mb-5 bg-white rounded">
+          
+            <h4 class="p-3 text-center">Create Team account</h4>
+            <hr />
+            <h5 class="text-center">Account Data</h5>
+            <div class="form-group pt-3">
+              <label for="email">Email address:</label>
+              <input type="email" class="form-control" autocomplete="username" placeholder="Enter email" id="email" required>
+            </div>
+            <div class="form-group">
+              <label for="sign_mobile">Mobile:</label>
+              <input type="mobile" class="form-control"  placeholder="Enter Mobile" id="sign_mobile" required>
+            </div>            
+            
+            <div class="form-group">
+              <label for="team_name">Team Title:</label>
+              <input type="text" class="form-control" placeholder="Enter Team Title" id="team_name" required>
+            </div>
+
+            <div class="form-group p-relative">
+            <i class="fa fa-eye password-eye" style=""></i>
+             <label for="pwd">Password: </label>
+              <input type="password" class="form-control" id="current-password" autocomplete="current-password" placeholder="Enter password" id="pwd" required>
+            </div>
+            
+            
+            <hr />
+            
+<h4 class="text-center pb-3">Members</h4>
+
+          <div class="member-row">
+            <h6 class="pt-3 pb-2 text-center"><span class="badge badge-dark p-2">Member 1</span></h6>
+            <div class="form-group">
+              <label for="member_name1">Name:</label>
+              <input type="text" class="form-control" placeholder="Member Name" id="member_name1" name="member_name1" required>
+            </div>
+
+            <div class="form-group">
+              <label for="institution_name1">Institution:</label>
+              <input type="text" class="form-control" placeholder="Member institution" id="institution_name1" name="institution_name1" required>
+            </div>
+          </div>
+            <hr />
+          
+          <div class="member-row">
+            <h6 class="pt-3 pb-2 text-center"><span class="badge badge-dark p-2">Member 2</span></h6>
+            <div class="form-group">
+              <label for="member_name2">Name:</label>
+              <input type="text" class="form-control" placeholder="Member Name" id="member_name2"name="member_name2" required>
+            </div>
+
+            <div class="form-group">
+              <label for="institution_name2">Institution:</label>
+              <input type="text" class="form-control" placeholder="Member institution" id="institution_name2" name="institution_name2" required>
+            </div>
+          </div>
+            
+            <hr />
+           
+           
+           <div class="member-row">
+            <h6 class="pt-3 pb-2 text-center"><span class="badge badge-dark p-2">Member 3</span></h6>
+            <div class="form-group">
+              <label for="member_name3">Name:</label>
+              <input type="text" class="form-control" placeholder="Member Name" id="member_name3"name="member_name3" required>
+            </div>
+
+            <div class="form-group">
+              <label for="institution_name">Institution:</label>
+              <input type="text" class="form-control" placeholder="Member institution" id="institution_name3" name="institution_name3" required>
+            </div>
+           </div>
+            <hr />
+            
+            
+            <!-- additonal members By Admin Only -->
+            
+
+           <div class="member-row" style="display:none;">
+            <h6 class="pt-3 pb-2 text-center"><span class="badge badge-dark p-2">Member 4</span></h6>
+            <div class="form-group">
+              <label for="member_name4">Name:</label>
+              <input type="text" class="form-control" placeholder="Member Name" id="member_name4" name="member_name4" value="" disabled>
+            </div>
+
+            <div class="form-group">
+              <label for="institution_name4">Institution:</label>
+              <input type="text" class="form-control" placeholder="Member institution" id="institution_name4" name="institution_name4" disabled>
+            </div>
+            <hr />
+           </div>
+            
+
+
+           <div class="member-row" style="display:none;">
+            <h6 class="pt-3 pb-2 text-center"><span class="badge badge-dark p-2">Member 5</span></h6>
+            <div class="form-group">
+              <label for="member_name5">Name:</label>
+              <input type="text" class="form-control" placeholder="Member Name" id="member_name5" name="member_name5" value="" disabled>
+            </div>
+
+            <div class="form-group">
+              <label for="institution_name5">Institution:</label>
+              <input type="text" class="form-control" placeholder="Member institution" id="institution_name5" name="institution_name5" disabled>
+            </div>
+            <hr />
+           </div>
+           
+            <!-- additonal members By Admin Only end -->
+            
+            <div class="text-center pt-3">
+              <button type="submit" class="btn btn-primary">SIGN UP</button>
+              
+            </div>
+            
+            <div class="text-center pt-4">
+              <p class="text-center p-3">By clicking Sign Up, you agree to our<a href="terms-of-use.html">Terms of Use</a> and our <a href="privacy.html">Privacy Policy</a>.</p>
+            </div>
+          </form>
+         <!-- login form End -->
+       </div>
+       
+     </div>
+       
+     
+ </div>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    /* Global Variables */
+    const toggleNavBtn = document.querySelector("#toggle_navbtn");
+    
+    const navcontainer = document.querySelector("#navmenu_holder");
+    const navmenuMobile = document.querySelector("#mobile_cont");
+    const navmenuDesktop = document.querySelector("#desktop_cont");
+    
+    let toggleIndex = 0;
+    
+    
+    
+
+    function toggleNavMobile() {
+      const barIcon = document.querySelector("#bar_icon");
+      const closeIcon = document.querySelector("#close_icon");
+      if (toggleIndex === 0) {
+        navcontainer.style.display = "block";
+        navmenuMobile.classList.add("mobile-navlinks-cont");
+        closeIcon.style.display = "";
+        barIcon.style.display = "none";
+        toggleIndex = 1;
+      } else {
+        navcontainer.style.display = "none";
+        navmenuMobile.classList.remove("mobile-navlinks-cont");
+        closeIcon.style.display = "none";
+        barIcon.style.display = "";
+        toggleIndex = 0;
+      }
+   }
+   
+   /* 
+      This in case testing resize or resize window that make it bigger
+      return mobile menu to default closed
+   */
+   function backMenuDefault() {
+   
+      const barIcon = document.querySelector("#bar_icon");
+      const closeIcon = document.querySelector("#close_icon");
+      if (window.innerWidth > 575 || document.documentElement.clientWidth > 575) {
+        navcontainer.style.display = "none";
+        navmenuMobile.classList.remove("mobile-navlinks-cont");
+        closeIcon.style.display = "none";
+        barIcon.style.display = "";
+        toggleIndex = 0;
+      }
+      /* fix animation mobile too */
+      if (document.querySelector("img.active-img")){
+         const allActiveImages = document.querySelectorAll("img.active-img");
+         allActiveImages.forEach( (activeImg)=>{
+           activeImg.classList.remove("active-img");
+         });
+      }
+      return true;
+   }
+   
+   /* 
+     function to append nav links to the correct nav container
+     according to window width
+   */
+   function navMenuLinksFix() {
+      const allNavMenuLinks = document.querySelectorAll(".movelink");
+      if (window.innerWidth > 575 || document.documentElement.clientWidth > 575) {
+        allNavMenuLinks.forEach( (navLink)=>{
+          navmenuDesktop.appendChild(navLink);
+        });
+      } else {
+        allNavMenuLinks.forEach( (navLink)=>{
+          navmenuMobile.appendChild(navLink);
+        });
+        
+      }
+      return true;
+   }
+
+  
+   toggleNavBtn.addEventListener("click", toggleNavMobile);
+   window.addEventListener("resize", backMenuDefault);
+   window.addEventListener("resize", navMenuLinksFix);
+   navMenuLinksFix();
+  
+
+    /* end helper */
+    
+    /* scroll effect */
+      function addImageScrollEffect() {
+        
+        const imagesContainer = document.querySelector("#animation_container");
+        const allImages = document.querySelectorAll(".animation_image");
+        if (window.innerWidth > 575 || document.documentElement.clientWidth > 575) {
+          /* effect for desktop */
+          const containerRect = imagesContainer.getBoundingClientRect();
+          if (containerRect.top >= -20 && containerRect.top <= 300) {
+            allImages.forEach( (image)=>{
+              if (!image.classList.contains("active-img")){
+                 image.classList.add("active-img");
+              }
+            });
+          } else {
+             if (document.querySelector("img.active-img")){
+                allImages.forEach( (image)=>{
+                  if (image.classList.contains("active-img")){
+                     image.classList.remove("active-img");
+                  }
+                });
+             }
+          
+          }
+        } else {
+          /* effect for mobile */
+
+            allImages.forEach( (image)=>{
+              const imageRectTop = image.getBoundingClientRect().top;
+              if (imageRectTop >= -30 && imageRectTop <= 200){
+                if (!image.classList.contains("active-img")){
+                  image.classList.add("active-img");
+                }
+              } else {
+                if (image.classList.contains("active-img")){
+                  image.classList.remove("active-img");
+                }
+              }
+            });
+          
+          }
+
+       return true;
+     }
+     
+    if (document.querySelectorAll(".animation_image").length > 0) {
+      window.addEventListener("scroll", addImageScrollEffect);
+    }
+    
+    /* profile js */
+    /* Display Edit inputs main part */
+    
+    function showEditMainInput(event){
+      const editBtn = event.target;
+      const editIndex = editBtn.getAttribute("data-edit-index");
+      const editText = document.querySelector(`.main-info[data-edit-index='${editIndex}']`);
+      const editInput = document.querySelector(`.edit-main-input[data-edit-index='${editIndex}']`);
+      const saveBtn = document.querySelector(`.save-main-info[data-edit-index='${editIndex}']`);
+      const cancelBtn = document.querySelector(`.cancel-main-info[data-edit-index='${editIndex}']`);
+      
+      editBtn.style.display = "none";
+      editText.style.display = "none";
+      editInput.style.display = "inline";
+      saveBtn.style.display = "";
+      cancelBtn.style.display = "";
+      
+      editInput.value = editText.innerText;
+      
+    }
+    
+    /* Hide Edit inputs main part */
+    
+    function HideEditMainInput(event){
+      const cancelBtn = event.target;
+      const cancelIndex = cancelBtn.getAttribute("data-edit-index");
+      const editText = document.querySelector(`.main-info[data-edit-index='${cancelIndex}']`);
+      const editInput = document.querySelector(`.edit-main-input[data-edit-index='${cancelIndex}']`);
+      const saveBtn = document.querySelector(`.save-main-info[data-edit-index='${cancelIndex}']`);
+      const editBtn = document.querySelector(`.edit-main-info[data-edit-index='${cancelIndex}']`);
+      
+      cancelBtn.style.display = "none";
+      editText.style.display = "";
+      editInput.style.display = "none";
+      saveBtn.style.display = "none";
+      editBtn.style.display = "";
+      
+    }    
+    
+    const allEditMainBtns = document.querySelectorAll(".edit-main-info");
+    allEditMainBtns.forEach( (editBtn)=>{
+      editBtn.addEventListener("click", showEditMainInput);
+    });
+
+
+    const allCancelMainBtns = document.querySelectorAll(".cancel-main-info");
+    allCancelMainBtns.forEach( (cancelBtn)=>{
+      cancelBtn.addEventListener("click", HideEditMainInput);
+    });
+    
+    /* profile js end */
+
+  });
+</script>
+</body>
+</html>
