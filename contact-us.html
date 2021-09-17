@@ -347,25 +347,25 @@ img.logo-image:hover {
 
   <form action="/action_page.php">
     <div class="row p-2">
-      <div class="col">
+      <div class="col-sm-6">
         <label for="contact_subject">Name *</label>
-        <input type="text" class="form-control contacus-input" id="contact_name" placeholder="Enter Name" name="contact_name" autocomplete="off">
+        <input type="text" class="form-control contacus-input" id="contact_name" placeholder="Enter Name" name="contact_name" required>
       </div>
-      <div class="col">
+      <div class="col-sm-6">
         <label for="contact_subject">Email *</label>
-        <input type="email" class="form-control contacus-input" placeholder="Enter Email" name="contact_email" id="contact_email">
+        <input type="email" class="form-control contacus-input" placeholder="Enter Email" name="contact_email" id="contact_email" required>
       </div>
     </div>
     <div class="row p-2">
        <div class="col">
         <label for="contact_subject">Subject *</label>
-        <input type="text" class="form-control contacus-input" placeholder="Enter Subject" name="contact_subject" id="contact_subject">
+        <input type="text" class="form-control contacus-input" placeholder="Enter Subject" name="contact_subject" id="contact_subject" required>
       </div>     
     </div>
     <div class="row p-2">
        <div class="col">
         <label for="contact_subject">Message *</label>
-        <textarea class="form-control contacus-input" rows="5"></textarea>
+        <textarea class="form-control contacus-input" rows="5" required></textarea>
       </div>     
     </div>
     
