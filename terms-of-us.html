@@ -281,7 +281,12 @@ img.logo-image:hover {
     opacity: .8;
   }
   
-  
+  .topic-header {
+    color: #2e3d49;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px #07f8b5, 0 0 25px #0b75e6, 0 0 5px #00d211;
+box-shadow: 1px 1px 2px #07f8b5, 0 0 25px #0b75e6, 0 0 5px #00d211;
+  }
   /* contact us */
   /* Media query */
   
@@ -371,8 +376,10 @@ img.logo-image:hover {
     height: 400px;
     position:relative;
     
-  }   
+  } 
   
+  /* terms */
+   #aside_container {display: none;}
   
   }
   
@@ -423,23 +430,63 @@ img.logo-image:hover {
   
   <div class="container-fluid">
 
-    <div class="d-flex flex-row justify-content-center flex-align-start flex-nowrap align-content-start" style="width:100%">
-       <!-- aside -->
-      <div class="border border-success width-30 d-flex flex-column justify-content-center flex-align-start flex-nowrap align-content-start p-3" id="aside_container">
-        <div class="p-2 aside-link-container"><a class="aside-link" href="#topic_one_id">INTRODUCTION AND ACCEPTANCE OF TERMS</a>
-</div>
-        <div class="p-2 aside-link-container">
-        <a class="aside-link" href="#topic_two_id">SERVICES</a></div>
-        <div class="p-2 aside-link-container">
-        <a class="aside-link" href="#topic_three_id">ACCESS AND USER ACCOUNTS</a>
-</div>
-        <div class="p-2 aside-link-container">
-        <a class="aside-link" href="#topic_four_id">MODIFICATION OF THIS TERMS OF USE</a></div>
-      </div>
+    <div class="d-flex flex-row align-items-start align-content-start" style="width:100%">
+       <!-- aside start -->
+      <div class="p-3" style="width:30%;" id="aside_container">
+      
+       <!-- aside dynamic container -->
+        <div class="d-flex flex-column justify-content-center flex-align-start flex-nowrap align-content-start">
+        
+        </div>
+        
+
+     </div>
+      <!-- aside end -->
+      
       
       <!-- page content -->
-      <div class="border border-success flex-fill p-3">
-        b
+      <div class="flex-fill flex-row justify-content-center flex-align-start flex-nowrap align-content-start p-3" style="width:70%;">
+      
+      <!-- sections start -->
+      
+        <!-- DB section template Start -->
+        <section id="section1" class="topic-section p-2 mb-4" data-aside="INTRODUCTION AND ACCEPTANCE OF TERMS">
+         <h4 class="topic-header bg-dark text-white p-2 mb-3 text-center">INTRODUCTION AND ACCEPTANCE OF TERMS</h4>
+         <p class="text-justify">
+          Udacity, Inc. (collectively, "we," "us" or "Udacity") provides you access to the Udacity Services (defined below) subject to the terms and conditions described in this document (this "Terms of Use") and any other guidelines, rules or licenses posted in connection with any Online Courses (defined below). This Terms of Use also includes our Privacy Policy, incorporated by this reference.
+
+By using this Service, clicking “I Agree”, registering a User Account (defined below), purchasing an Online Course, or by indicating your agreement to this Terms of Use through a similar mechanism, you are agreeing to be bound by this Terms of Use. If you do not agree to this Terms of Use, do not use the Services. If you under the age of 18, but at least 13 years of age, you represent and agree that you are an emancipated minor or possess legal parental or guardian consent to use the Services and are fully able and competent to enter into all of the conditions, obligations, affirmations, representations and warranties set forth in this Terms of Use. The Services are not intended for, nor directed at, individuals under the age of 13 (or under the applicable age of consent in your jurisdiction); if you are under 13 years of age (or the applicable age of consent in your jurisdiction), do not use the Services.
+        </p>
+      </section>
+    <!-- DB section template end -->
+        <section id="section2" class="topic-section p-2 mb-4" data-aside="SERVICES">
+         <h4 class="topic-header bg-dark text-white p-2 mb-3 text-center ">SERVICES</h4>
+         <p class="text-justify">
+          Udacity, Inc. (collectively, "we," "us" or "Udacity") provides you access to the Udacity Services (defined below) subject to the terms and conditions described in this document (this "Terms of Use") and any other guidelines, rules or licenses posted in connection with any Online Courses (defined below). This Terms of Use also includes our Privacy Policy, incorporated by this reference.
+
+By using this Service, clicking “I Agree”, registering a User Account (defined below), purchasing an Online Course, or by indicating your agreement to this Terms of Use through a similar mechanism, you are agreeing to be bound by this Terms of Use. If you do not agree to this Terms of Use, do not use the Services. If you under the age of 18, but at least 13 years of age, you represent and agree that you are an emancipated minor or possess legal parental or guardian consent to use the Services and are fully able and competent to enter into all of the conditions, obligations, affirmations, representations and warranties set forth in this Terms of Use. The Services are not intended for, nor directed at, individuals under the age of 13 (or under the applicable age of consent in your jurisdiction); if you are under 13 years of age (or the applicable age of consent in your jurisdiction), do not use the Services.
+        </p>         
+        </section>
+        <section id="section3" class="topic-section p-2 mb-4" data-aside="ACCESS AND USER ACCOUNTS">
+           <h4 class="topic-header bg-dark text-white p-2 mb-3 text-center">ACCESS AND USER ACCOUNTS</h4>
+         <p class="text-justify">
+          Udacity, Inc. (collectively, "we," "us" or "Udacity") provides you access to the Udacity Services (defined below) subject to the terms and conditions described in this document (this "Terms of Use") and any other guidelines, rules or licenses posted in connection with any Online Courses (defined below). This Terms of Use also includes our Privacy Policy, incorporated by this reference.
+
+By using this Service, clicking “I Agree”, registering a User Account (defined below), purchasing an Online Course, or by indicating your agreement to this Terms of Use through a similar mechanism, you are agreeing to be bound by this Terms of Use. If you do not agree to this Terms of Use, do not use the Services. If you under the age of 18, but at least 13 years of age, you represent and agree that you are an emancipated minor or possess legal parental or guardian consent to use the Services and are fully able and competent to enter into all of the conditions, obligations, affirmations, representations and warranties set forth in this Terms of Use. The Services are not intended for, nor directed at, individuals under the age of 13 (or under the applicable age of consent in your jurisdiction); if you are under 13 years of age (or the applicable age of consent in your jurisdiction), do not use the Services.
+        </p>      
+        
+        
+        </section>
+        <section id="section4" class="topic-section p-2 mb-4" data-aside="MODIFICATION OF THIS TERMS OF USE">
+            <h4 class="topic-header bg-dark text-white p-2 mb-3 text-center">MODIFICATION OF THIS TERMS OF USE</h4>
+         <p class="text-justify">
+          Udacity, Inc. (collectively, "we," "us" or "Udacity") provides you access to the Udacity Services (defined below) subject to the terms and conditions described in this document (this "Terms of Use") and any other guidelines, rules or licenses posted in connection with any Online Courses (defined below). This Terms of Use also includes our Privacy Policy, incorporated by this reference.
+
+By using this Service, clicking “I Agree”, registering a User Account (defined below), purchasing an Online Course, or by indicating your agreement to this Terms of Use through a similar mechanism, you are agreeing to be bound by this Terms of Use. If you do not agree to this Terms of Use, do not use the Services. If you under the age of 18, but at least 13 years of age, you represent and agree that you are an emancipated minor or possess legal parental or guardian consent to use the Services and are fully able and competent to enter into all of the conditions, obligations, affirmations, representations and warranties set forth in this Terms of Use. The Services are not intended for, nor directed at, individuals under the age of 13 (or under the applicable age of consent in your jurisdiction); if you are under 13 years of age (or the applicable age of consent in your jurisdiction), do not use the Services.
+        </p>        
+        
+        
+        </section>
       </div>
     </div>
   </div>
@@ -577,18 +624,36 @@ img.logo-image:hover {
     
     
     /* contact us script */
-    function resetContactForm() {
-      const allContactInputs = document.querySelectorAll(".contacus-input");
-      allContactInputs.forEach( (contactInput)=>{
-         contactInput.value = "";
-      });
-    }
-    const resetBtn = document.querySelector("#contact_reset");
-    resetBtn.addEventListener("click", resetContactForm);
-     
+
      
      /* dynamic aside */
-     
+      const asideContainer = document.querySelector("#aside_container");
+      const allSections = document.querySelectorAll("section.topic-section");
+      const asidesFragment = document.createDocumentFragment();
+      allSections.forEach( (sec)=>{
+        const sectionAside = sec.getAttribute("data-aside");
+        const sectionId = sec.getAttribute("id");
+        const newAsideContainer = document.createElement("div");
+        const newAsideLink = document.createElement("a");
+        newAsideLink.innerText = sectionAside;
+        
+        
+        newAsideContainer.classList.add("p-2","aside-link-container");
+        newAsideLink.classList.add("aside-link");
+        newAsideLink.setAttribute("href", `#${sectionId}`);
+        
+        newAsideLink.addEventListener("click", (event)=>{
+          event.preventDefault();
+          sec.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+          event.run();
+        });
+        
+        newAsideContainer.appendChild(newAsideLink);
+        asidesFragment.appendChild(newAsideContainer);
+        
+      });
+      
+      asideContainer.appendChild(asidesFragment);
      /* dynamic aside end */
      
     /* contact us */
