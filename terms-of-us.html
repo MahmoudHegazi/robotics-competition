@@ -443,10 +443,6 @@ box-shadow: 1px 1px 2px #07f8b5, 0 0 25px #0b75e6, 0 0 5px #00d211;
       <div class="p-3" style="width:30%;" id="aside_container">
       
        <!-- aside dynamic container -->
-        <div class="d-flex flex-column justify-content-center flex-align-start flex-nowrap align-content-start">
-        
-        </div>
-        
 
      </div>
       <!-- aside end -->
@@ -690,12 +686,14 @@ By using this Service, clicking “I Agree”, registering a User Account (defin
      /* add active class to link */
      function handleActiveLink(activeSection) {
        removeAnyActiveLink();
+       const asideContainerElm = document.querySelector("#aside_container");
        const allAsideLinks = document.querySelectorAll("div.aside-link-container");
        const activeDataAside = activeSection.getAttribute("data-aside");
        for (let i=0; i<allAsideLinks.length; i++){
          if (allAsideLinks[i].innerText == activeDataAside){
            if (!allAsideLinks[i].classList.contains("active-aside-link")){
              allAsideLinks[i].classList.add("active-aside-link");
+             
            }
          }
        }
