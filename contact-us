@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+    <style>
+   
+   
+
+   html, body {
+     min-height: 100%;
+     height: auto;
+     margin: auto;
+   }
+   
+
+   .navmenu-container {
+     position: sticky;
+     top: 0;
+     left: 0;
+     z-index: 120;
+   }
+  /* Make the image fully responsive */
+  .main_header {
+    height: 100%;
+    padding: 0;
+  }
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .indicators-class {
+    display: none;
+  }
+  /* nav menu */
+  .navmenu {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    color: black;
+    margin: 0;
+    padding: 0;
+    background-size: conver;
+    background-repeat: no-repeat;
+    background: #e6e6e6;
+  }
+  .nav-link{
+    display: block;
+    height: 100%;
+    padding: 12px 18px;
+    cursor: pointer;
+  }
+  .nav-link.hoverable:hover{
+    background: lightgray;
+    color: black;
+  }
+  
+  .nav-toggle {display:none;}
+  
+  .nav-links-cont {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  
+  .mobile-navlinks-cont {display:none;}
+  
+  .toggle-btn {
+    border: 1px solid gray;
+    border-radius: 4px;
+    color: black;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  
+  .toggle-btn:active {
+    background: gray;
+    
+  }
+  
+  .logo-image {
+    border:1px solid #0f59a3;border-radius:5px;box-shadow: 5px 5px 2px #aaaaaa;
+  }
+  
+  .signup-class {
+    margin-left: 4px;
+  }
+  
+  /* nav menu end */
+  .carousel-class {
+    z-index:0;
+    position:relative;
+  }
+  
+  .header-abover{
+    top:-20px;
+    background:rgb(245, 245, 245);
+    z-index:10;
+    position:relative;
+  }
+  .navmenu-holder {display: none;}
+  
+  
+  
+  /* images section */
+  
+  .active-img {
+    position: relative;
+    animation-name: robots;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+  
+  
+  @keyframes robots {
+    0%   {background-color:red; left:0px; bottom:0px;}
+    9% { transform: translate(-1px, -2px) rotate(-2deg);}
+    10%   {background-color:red; left:0px; bottom:2px;}
+    19% { transform: translate(-1px, -2px) rotate(2deg);}
+    20%  {background-color:yellow; left:0px; bottom:4px;}
+    29% { transform: translate(-1px, -2px) rotate(-2deg);}
+    30%  {background-color:yellow; left:0px; bottom:6px;}
+    39% { transform: translate(-1px, -2px) rotate(2deg);}
+    40%  {background-color:yellow; left:0px; bottom:8px;}
+    50%  {background-color:yellow; left:0px; bottom:10px;}
+    60%  {background-color:yellow; left:0px; bottom:12px;}
+    70%  {background-color:yellow; left:0px; bottom:14px;}
+    79% { transform: translate(-1px, -2px) rotate(-4deg);}
+    80%  {background-color:yellow; left:0px; bottom:16px;}
+    99% { transform: translate(-1px, -2px) rotate(4deg);}
+    100%  {background-color:yellow; left:0px; bottom:20px;}
+  }
+  
+img.logo-image:hover {
+  animation: shakelogo 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shakelogo {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-72deg); }
+  20% { transform: translate(-3px, 0px) rotate(-144deg); }
+  30% { transform: translate(3px, 2px) rotate(-216deg); }
+  40% { transform: translate(1px, -1px) rotate(-288deg); }
+  50% { transform: translate(-1px, 2px) rotate(-360deg); }
+  60% { transform: translate(-3px, 1px) rotate(360deg); }
+  70% { transform: translate(3px, 1px) rotate(288deg); }
+  80% { transform: translate(-1px, -1px) rotate(216deg); }
+  90% { transform: translate(1px, 2px) rotate(144deg); }
+  100% { transform: translate(1px, -2px) rotate(72deg); }
+}
+
+
+  /* images section end */
+  /* footer */
+  .footer-class {
+    background: #0f59a3;
+    height: max-content;
+    color: white;
+    
+  }
+  
+  .footer-warper {
+     height: 100%;
+  }
+  
+  .footer-class .social-container {
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    max-width: 250px;
+    margin-left: auto;
+  }
+  .footer-class .social-bar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-top: 5px;
+  }
+  
+    
+  .facebook {
+    background:#0080ff;
+    color:white;
+    width:40px;
+  }
+  .gmail {
+    background:#ffffcc;
+    color:orange;
+  }
+  .twiter {
+    background:#33cccc;
+    color:white;
+  }
+  .instigram {
+    background:#ff80aa;
+    color:white;
+  }
+
+  /* footer end */
+  
+  
+  /* Media query */
+  
+
+
+  @media only screen and (max-width: 575px) {
+  
+    .indicators-class {
+      display: flex;
+      padding-bottom: 10px;
+    }
+    .mobile-navlinks-cont {
+       background: #0f59a3;
+       color: white;
+       display:block;
+    }
+    
+    .nav-link {
+      text-align: center;
+      color: white;
+      border: none;
+    }
+    
+    .signup-class {
+      margin-left: 0;
+    }
+    
+    .login-class:hover {
+      background: lightgray;
+      color:black;
+    }
+    
+    .signup-class:hover{
+      background: lightgray;
+      color:black;   
+    }
+  
+    .nav-logo {
+      display: inline-block;
+    }
+    .nav-toggle {
+      display: inline-block;
+      margin-left: auto;
+    }
+    
+    .carousel-class {
+      min-height: 300px;
+      height: 300px;
+      
+    }
+    .carousel-class div {height: 100%;}
+    
+    /* footer mobile */
+    .footer-warper {
+        text-align: center;
+
+    }
+     .footer-class .form-bar form{
+      display: flex;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .form-bar form input[type=email] {
+      width: 70%;
+    }
+    .form-bar form button {
+      width: 30%;
+    }
+    
+    .footer-class .social-container {
+      margin-top: 15px;
+      max-width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .footer-class .social-bar {
+      margin-top: 5px;
+      width: 100%;
+      margin: 5px;
+      
+    }
+  }
+  
+  
+  /* media query end */
+  </style>
+</head>
+<body>
+
+ <!-- nav menu -->
+<div class="navmenu-container">
+<div class="container-fluid navmenu">
+  <div class="nav-link nav-logo"><img src="https://images-platform.99static.com//mgaveJ1iz5D9riVxPYkH_VH78nU=/0x0:1000x1000/fit-in/500x500/99designs-contests-attachments/117/117320/attachment_117320637" width="40" height="10%" class="logo-image"></div>
+  <div id="desktop_cont" style="width: 100%;" class="nav-links-cont">
+    <div class="nav-link movelink hoverable">Page 2</div>
+    <div class="nav-link movelink hoverable">Page 3</div>
+    <div class="nav-link movelink hoverable">Page 4</div>
+    <div class="nav-link movelink btn btn-outline-success login-class" style="margin-left:auto;">Login</div>
+    <div class="nav-link movelink btn btn-outline-info signup-class">Register</div>
+  </div>
+
+  <div class="nav-link nav-toggle">
+    <button id="toggle_navbtn" class="toggle-btn">
+      <i class="fa fa-bars" id="bar_icon"></i>
+      <i class="fa fa-close" id="close_icon" style="display:none;"></i>
+    </button>
+  </div>
+
+</div>
+
+<div class="navmenu-holder" id="navmenu_holder">
+  <div id="mobile_cont" class="mobile-navlinks-cont">
+    <!-- Nav menu Links mobile goes here -->
+  </div>
+</div>
+</div>
+  
+<!-- nav menu end -->
+
+<!-- body -->
+
+<div class="container mb-4">
+<div class="container text-center">
+
+
+  <h3 class="p-2">Contact Us</h3> 
+  
+  <img src="http://assets.stickpng.com/thumbs/580b57fbd9996e24bc43be11.png" width="200" height="250">
+    <p class="p-2">Please complete this form and one of our agents will reply to you by email as soon as possible.</p>
+</div>
+
+
+
+  <form action="/action_page.php">
+    <div class="row p-2">
+      <div class="col">
+        <label for="contact_subject">Name *</label>
+        <input type="text" class="form-control contacus-input" id="contact_name" placeholder="Enter Name" name="contact_name" autocomplete="off">
+      </div>
+      <div class="col">
+        <label for="contact_subject">Email *</label>
+        <input type="email" class="form-control contacus-input" placeholder="Enter Email" name="contact_email" id="contact_email">
+      </div>
+    </div>
+    <div class="row p-2">
+       <div class="col">
+        <label for="contact_subject">Subject *</label>
+        <input type="text" class="form-control contacus-input" placeholder="Enter Subject" name="contact_subject" id="contact_subject">
+      </div>     
+    </div>
+    <div class="row p-2">
+       <div class="col">
+        <label for="contact_subject">Message *</label>
+        <textarea class="form-control contacus-input" rows="5"></textarea>
+      </div>     
+    </div>
+    
+    <div class="form-controlers p-2">
+      <button type="submit" class="btn btn-primary mt-3">Submit</button>
+      <button type="button" class="btn btn-secondary mt-3" id="contact_reset">Reset</button>
+    </div>
+  </form>
+</div>
+
+
+<!-- body -->
+
+
+
+<!-- footer -->
+<div class="container-fluid footer-class">
+
+ <div class="row footer-warper pb-4">
+ 
+ 
+  <!-- contact form -->
+  <div class="form-bar col-sm-7 ml-3 mt-3">
+      <label for="email">Get The lastest Features:</label>
+      <form class="form-inline" action="/action_page.php">
+        <input type="email" class="form-control" placeholder="Enter Email" id="email">
+        <button type="submit" class="btn btn-danger">Submit</button>
+      </form>
+  </div>
+  
+  <!-- contact form end -->
+  
+  
+  <div>
+  
+  </div>
+
+  
+  
+  <!-- social bar -->
+  <div class="social-container col-sm-4 mt-3">
+    <span>Contact Us: </span>
+    <div class="social-bar">
+      <div class="btn btn-info facebook"><i class="fa fa-facebook"></i></div>
+      <div class="btn btn-info gmail"><i class="fa fa-google"></i></div>
+      <div class="btn btn-info btn-primary twiter"><i class="fa fa-twitter"></i></div>
+      <div class="btn btn-info instigram"><i class="fa fa-instagram"></i></div>
+    </div>
+  </div>
+  <!-- social bar end -->
+  
+ </div>
+</div>
+
+<!-- footer end -->
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    /* Global Variables */
+    const toggleNavBtn = document.querySelector("#toggle_navbtn");
+    
+    const navcontainer = document.querySelector("#navmenu_holder");
+    const navmenuMobile = document.querySelector("#mobile_cont");
+    const navmenuDesktop = document.querySelector("#desktop_cont");
+    
+    let toggleIndex = 0;
+    
+    
+    
+
+    function toggleNavMobile() {
+      const barIcon = document.querySelector("#bar_icon");
+      const closeIcon = document.querySelector("#close_icon");
+      if (toggleIndex === 0) {
+        navcontainer.style.display = "block";
+        navmenuMobile.classList.add("mobile-navlinks-cont");
+        closeIcon.style.display = "";
+        barIcon.style.display = "none";
+        toggleIndex = 1;
+      } else {
+        navcontainer.style.display = "none";
+        navmenuMobile.classList.remove("mobile-navlinks-cont");
+        closeIcon.style.display = "none";
+        barIcon.style.display = "";
+        toggleIndex = 0;
+      }
+   }
+   
+   /* 
+      This in case testing resize or resize window that make it bigger
+      return mobile menu to default closed
+   */
+   function backMenuDefault() {
+   
+      const barIcon = document.querySelector("#bar_icon");
+      const closeIcon = document.querySelector("#close_icon");
+      if (window.innerWidth > 575 || document.documentElement.clientWidth > 575) {
+        navcontainer.style.display = "none";
+        navmenuMobile.classList.remove("mobile-navlinks-cont");
+        closeIcon.style.display = "none";
+        barIcon.style.display = "";
+        toggleIndex = 0;
+      }
+      /* fix animation mobile too */
+      if (document.querySelector("img.active-img")){
+         const allActiveImages = document.querySelectorAll("img.active-img");
+         allActiveImages.forEach( (activeImg)=>{
+           activeImg.classList.remove("active-img");
+         });
+      }
+      return true;
+   }
+   
+   /* 
+     function to append nav links to the correct nav container
+     according to window width
+   */
+   function navMenuLinksFix() {
+      const allNavMenuLinks = document.querySelectorAll(".movelink");
+      if (window.innerWidth > 575 || document.documentElement.clientWidth > 575) {
+        allNavMenuLinks.forEach( (navLink)=>{
+          navmenuDesktop.appendChild(navLink);
+        });
+      } else {
+        allNavMenuLinks.forEach( (navLink)=>{
+          navmenuMobile.appendChild(navLink);
+        });
+        
+      }
+      return true;
+   }
+
+  
+   toggleNavBtn.addEventListener("click", toggleNavMobile);
+   window.addEventListener("resize", backMenuDefault);
+   window.addEventListener("resize", navMenuLinksFix);
+   navMenuLinksFix();
+  
+
+    /* end helper */
+    
+    
+    /* contact us script */
+    function resetContactForm() {
+      const allContactInputs = document.querySelectorAll(".contacus-input");
+      allContactInputs.forEach( (contactInput)=>{
+         contactInput.value = "";
+      });
+    }
+    const resetBtn = document.querySelector("#contact_reset");
+    resetBtn.addEventListener("click", resetContactForm);
+     
+     
+    /* contact us */
+
+  });
+</script>
+</body>
+</html>
