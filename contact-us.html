@@ -21,6 +21,12 @@
      height: auto;
      margin: auto;
    }
+   body {
+     font-size: 16px;
+     font-family: Open Sans,sans-serif;
+     -webkit-font-smoothing: antialiased;
+     
+     }
    
 
    .navmenu-container {
@@ -89,7 +95,7 @@
   }
   
   .logo-image {
-    border:1px solid #0f59a3;border-radius:5px;box-shadow: 5px 5px 2px #aaaaaa;
+    border:1px solid #0f59a3;border-radius:5px;box-shadow: 1px 1px 2px #07f8b5, 0 0 25px #0b75e6, 0 0 5px #00d211;
   }
   
   .signup-class {
@@ -120,6 +126,8 @@
     animation-duration: 1s;
     animation-iteration-count: 1;
   }
+  
+  
   
   
   @keyframes robots {
@@ -211,6 +219,83 @@ img.logo-image:hover {
   /* footer end */
   
   
+  /* contact  us */
+  .width-30 {width:30%}
+  
+  
+  .contact-header {
+    height: 295px;
+    
+  }
+
+  .terms-header-content{
+    background:#343a40;
+    color:white;
+    opacity:0.8;
+    width:50%;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px #07f8b5, 0 0 25px #0b75e6, 0 0 5px #00d211;
+  }
+  .contact-header-background {
+     /* The image used */
+     background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/08/3D-Robot-Wallpaper.jpg");
+
+     /* Full height */
+     height: 100%;
+
+     /* Center and scale the image nicely */
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-attachment: fixed;
+  }
+  
+
+  .active-aside-link {
+    background-color: #fafbfc;
+    border-left: 3px solid #017a9b !important;
+  }
+  
+  
+  #aside_container .aside-link-container{ 
+    color: #7d97ad;
+    
+  }
+  
+  .aside-link {
+    color: inherit;
+    cursor: pointer;
+    
+  }
+  .aside-link:hover{
+  
+    text-decoration: none;
+    color: inherit;
+   }
+  
+  div#aside_container .aside-link-container:hover{ 
+   color: #525c65;
+  }
+  
+  .aside-link:active {
+    opacity: .8;
+  }
+  
+  .topic-header {
+    color: #2e3d49;
+    font-size: 1.2em;
+
+  }
+  
+  
+  .your-active-class {
+    box-shadow: 1px 1px 2px #07f8b5, 0 0 25px #0b75e6, 0 0 5px #00d211;
+  }
+  .your-active-class .topic-header{
+      text-shadow: 1px 1px 2px #07f8b5, 0 0 25px #0b75e6, 0 0 5px #00d211;
+box-shadow: 1px 1px 2px #07f8b5, 0 0 25px #0b75e6, 0 0 5px #00d211;
+  }
+  /* contact us */
   /* Media query */
   
 
@@ -293,9 +378,44 @@ img.logo-image:hover {
       margin: 5px;
       
     }
+    
+    /* contact us */
+   .contact-header {
+    height: 400px;
+    position:relative;
+    
+  } 
+  
+  /* terms */
+   #aside_container {display: none;}
+   
+   
+   /* admin style */
+   
+   .admin-aside-link {text-align: center !important;}
+  
+  }
+  /*admin style */
+  .full-width {width:100%;}
+  .admin-aside-link{
+    background: lightgray;
+    color: black;
+    cursor: pointer;
+    text-align: left;
   }
   
+  .admin-aside-link:hover{
+    background: gray;
+  }
   
+  table.admin_table {
+   table-layout: fixed
+  }
+  
+  table.admin_table td{
+    word-wrap: break-word;
+  }
+
   /* media query end */
   </style>
 </head>
@@ -331,55 +451,394 @@ img.logo-image:hover {
   
 <!-- nav menu end -->
 
-<!-- body -->
-
-<div class="container mb-4">
-<div class="container text-center">
-
-
-  <h3 class="p-2">Contact Us</h3> 
+<!-- body flex-row-reverse -->
+<div class="container-fluid contact-header shadow p-2 mb-4 bg-white">
+  <div class="contact-header-background text-center d-flex flex-column justify-content-center align-items-center">
+    <h3 class="terms-header-content p-2">Admin Page</h3>
+  </div>
   
-  <img src="http://assets.stickpng.com/thumbs/580b57fbd9996e24bc43be11.png" width="200" height="250">
-    <p class="p-2">Please complete this form and one of our agents will reply to you by email as soon as possible.</p>
 </div>
+  
+
+      
+      
+<!-- page content -->
+ <div class="container-fluid">
+   <div class="row">
+     <div class="col-sm-4">
+       <!--aside -->
+       <div class="d-flex flex-column  align-items-start justify-content-center" style="width:100%;">
+         <div class="p-2 flex-fill full-width mb-2 mt-2 admin-aside-link" id="team_req_link">Team Requests</div>
+         <div class="p-2 flex-fill full-width mb-2 admin-aside-link" id="edit_req_link">Edit Requests</div>
+         <div class="p-2 flex-fill full-width mb-2 admin-aside-link" id="contact_link">Contact Messages</div>
+         <div class="p-2 flex-fill full-width mb-2 admin-aside-link" id="notifications_link">Notifications</div>
+       </div>
+     </div>
+     <!-- body -->
+     <div class="col-sm-8">
+       <!-- team requests -->
+        <div class="container">
+          <h3 class="p-2 text-center">Team Requests</h3>          
+          <table id="team_requests_table" class="table table-dark table-striped admin_table table-hover">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mr Robots</td>
+                <td>
+                 <button class="btn btn-info" data-toggle="modal" data-target="#team_request_view">View</button>
+                 <button class="btn btn-success">Accept</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Mary</td>
+                <td>
+                 <button class="btn btn-info" data-toggle="modal" data-target="#team_request_view">View</button>
+                 <button class="btn btn-success">Accept</button>
+                </td>
+              </tr>
+              <tr>
+                <td>July</td>
+                <td>
+                 <button class="btn btn-info" data-toggle="modal" data-target="#team_request_view">View</button>
+                 <button class="btn btn-success">Accept</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>       
+       <!-- team requests end -->
+       
+       <!-- Edit requests -->
+        <div class="container pt-5 pb-3">
+          <h3 class="p-2 text-center">Edit Requests</h3>          
+          <table id="team_edit_table" class="table table-dark table-striped admin_table table-hover">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mr Robots</td>
+                <td>
+                 <button class="btn btn-info" data-toggle="modal" data-target="#edit_request_view">View</button>
+                 <button class="btn btn-success">Approve</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Mary</td>
+                <td>
+                 <button class="btn btn-info" data-toggle="modal" data-target="#edit_request_view">View</button>
+                 <button class="btn btn-success">Approve</button>
+                </td>
+              </tr>
+              <tr>
+                <td>July</td>
+                <td>
+                 <button class="btn btn-info" data-toggle="modal" data-target="#edit_request_view">View</button>
+                 <button class="btn btn-success">Approve</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>       
+       <!-- Edit requests end -->
+            
+
+  
+       
+        <!-- Contact Messages -->  
+        <div class="container pt-5 pb-3">
+          <h3 class="p-2 text-center">Contact Messages</h3>          
+          <table id="contact_table" class="table table-dark table-striped admin_table table-hover">
+            <thead>
+              <tr>
+                <th>Email</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>user@gmail.com</td>
+                <td>
+                 <button class="btn btn-info" data-toggle="modal" data-target="#view_contact_message">View</button>
+                 <button class="btn btn-success" data-toggle="modal" data-target="#reply_contact_message">Reply</button>
+                </td>
+              </tr>
+              <tr>
+                <td>user2@gmail.com</td>
+                <td>
+                 <button class="btn btn-info" data-toggle="modal" data-target="#view_contact_message">View</button>
+                 <button class="btn btn-success" data-toggle="modal" data-target="#reply_contact_message">Reply</button>
+                </td>
+              </tr>
+              <tr>
+                <td>user3@gmail.com</td>
+                <td>
+                 <button class="btn btn-info" data-toggle="modal" data-target="#view_contact_message">View</button>
+                 <button class="btn btn-success" data-toggle="modal" data-target="#reply_contact_message">Reply</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>       
+       <!-- Contact Messages end -->
 
 
+        <!-- Members Notifications -->
+        <div class="container pt-5 pb-3"> 
+          <h3 class="p-2 text-center">Members Notifications</h3>          
+          <table id="notifications_table" class="table table-dark table-striped admin_table table-hover">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mr Robots</td>
+                <td>
+                 <button class="btn btn-success full-width" data-toggle="modal" data-target="#send_notification">Send</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Mr Robots</td>
+                <td>
+                 <button class="btn btn-success full-width" data-toggle="modal" data-target="#send_notification">Send</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Mr Robots</td>
+                <td>
+                 <button class="btn btn-success full-width" data-toggle="modal" data-target="#send_notification">Send</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>       
+       <!-- Members Notifications end -->       
+     </div>
+   </div>
+ </div>
 
-  <form action="/action_page.php">
-    <div class="row p-2">
-      <div class="col-sm-6">
-        <label for="contact_subject">Name *</label>
-        <input type="text" class="form-control contacus-input" id="contact_name" placeholder="Enter Name" name="contact_name" required>
+
+<!-- modals -->
+
+  <!-- View Team Requests -->
+  <div class="modal fade" id="team_request_view">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Team Requests</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="container p-2">
+             <div class="p-2">
+                <h6>Email</h6>
+                <p></p>
+             </div>
+             <hr />
+             <div class="p-2">
+                <h6>Mobile</h6>
+                <p></p>             
+             </div>
+             <hr />
+             <div class="p-2">
+                <h6>Title</h6>
+                <p></p>             
+             </div>
+             <hr />
+             <div class="p-2">
+                <h6>1 Member Name</h6>
+                <p></p>             
+             </div>
+             <hr />
+             <div class="p-2">
+                <h6>1 Member Institution</h6>
+                <p></p>             
+             </div>
+             <hr />
+             <div class="p-2">
+                <h6>2 Member Institution</h6>
+                <p></p>             
+             </div>
+             <hr />
+             <div class="p-2">
+                <h6>2 Member Institution</h6>
+                <p></p>             
+             </div>
+             <hr />
+             <div class="p-2">
+                <h6>3 Member Name</h6>
+                <p></p>             
+             </div>
+             <hr />
+             <div class="p-2">
+                <h6>3 Member Institution</h6>
+                <p></p>            
+             </div>
+             <hr />
+          </div>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
       </div>
-      <div class="col-sm-6">
-        <label for="contact_subject">Email *</label>
-        <input type="email" class="form-control contacus-input" placeholder="Enter Email" name="contact_email" id="contact_email" required>
+    </div>
+  </div>
+  <!-- View Team Requests end -->
+
+  <!-- View Edit Requests -->
+  <div class="modal fade" id="edit_request_view">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Edit Requests</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
       </div>
     </div>
-    <div class="row p-2">
-       <div class="col">
-        <label for="contact_subject">Subject *</label>
-        <input type="text" class="form-control contacus-input" placeholder="Enter Subject" name="contact_subject" id="contact_subject" required>
-      </div>     
+  </div>
+  <!-- View Edit Requests end -->
+  
+
+  <!-- View Contact Messages -->
+  <div class="modal fade" id="view_contact_message">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Contact Messages</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="container">
+            <div class="p-2"><span>Name:</span> <span id="message_view_name"> </span></div>
+            <div class="p-2"><span>Email:</span> <span id="message_view_mail"> </span></div>
+            <div class="p-2"><span>Subject:</span> <span id="message_subject_name"> </span></div>
+            <div class="p-2"><span>Message:</span> <p id="message_subject_name"> x</p></div>
+          </div>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
     </div>
-    <div class="row p-2">
-       <div class="col">
-        <label for="contact_subject">Message *</label>
-        <textarea class="form-control contacus-input" rows="5" required></textarea>
-      </div>     
+  </div>
+  <!-- View Contact Messages end -->
+
+
+  <!-- Reply Contact Messages -->
+  <div class="modal fade" id="reply_contact_message">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Send Messages</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+           <form action="/action_page.php">
+           
+             <div class="form-group">
+               <label for="email_message_input">Email</label>
+               <input type="email" class="form-control" id="email_message_input" name="email_message_input">
+             </div>
+             <div class="form-group">
+               <label for="email_message">Email Message</label>
+               <textarea class="form-control" placeholder="Enter Message" id="email_message_content"  id="email_message_content" rows="4"></textarea>
+             </div>
+             
+
+             <button type="submit" class="btn btn-primary ">Send</button>
+           </form>    
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
     </div>
-    
-    <div class="form-controlers p-2">
-      <button type="submit" class="btn btn-primary mt-3">Submit</button>
-      <button type="button" class="btn btn-secondary mt-3" id="contact_reset">Reset</button>
+  </div>
+  <!-- Reply Contact Messages end -->
+  
+
+
+  <!-- Send Notification -->
+  <div class="modal fade" id="send_notification">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Send Notification</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+           <form action="/action_page.php">
+             <div class="form-group">
+               <label for="notification_message">Notification Message</label>
+               <textarea class="form-control" placeholder="Enter Message" id="notification_message" rows="4"></textarea>
+             </div>
+             
+
+             <button type="submit" class="btn btn-primary ">Send</button>
+           </form>     
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
     </div>
-  </form>
-</div>
-
-
-<!-- body -->
-
-
+  </div>
+  <!-- Send Notification end -->
+  
+  
+<!-- end modals -->
 
 <!-- footer -->
 <div class="container-fluid footer-class">
@@ -506,20 +965,31 @@ img.logo-image:hover {
   
 
     /* end helper */
+   
+    /* Admin Script */
+    const teamRequestLink = document.getElementById("team_req_link");
+    const teamEditLink = document.getElementById("edit_req_link");
+    const contactMessageLink = document.getElementById("contact_link");
+    const notificationsLink = document.getElementById("notifications_link");
+
+    const teamRequestTable = document.getElementById("team_requests_table");
+    const teamEditLinkTable = document.getElementById("team_edit_table");
+    const contactMessageTable = document.getElementById("contact_table");
+    const notificationsTable = document.getElementById("notifications_table");
     
+    teamRequestLink.addEventListener("click", ()=>{
+      teamRequestTable.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+    });
+    teamEditLink.addEventListener("click", ()=>{
+      teamEditLinkTable.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+    });
+    contactMessageLink.addEventListener("click", ()=>{
+      contactMessageTable.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+    });
+    notificationsLink.addEventListener("click", ()=>{
+      notificationsTable.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+    });    
     
-    /* contact us script */
-    function resetContactForm() {
-      const allContactInputs = document.querySelectorAll(".contacus-input");
-      allContactInputs.forEach( (contactInput)=>{
-         contactInput.value = "";
-      });
-    }
-    const resetBtn = document.querySelector("#contact_reset");
-    resetBtn.addEventListener("click", resetContactForm);
-     
-     
-    /* contact us */
 
   });
 </script>
