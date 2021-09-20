@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+    <style>
+   
+   
+
+   html, body {
+     min-height: 100%;
+     height: auto;
+     margin: auto;
+   }
+   body {
+     font-size: 16px;
+     font-family: Open Sans,sans-serif;
+     -webkit-font-smoothing: antialiased;
+     
+     }
+   
+
+   .navmenu-container {
+     position: sticky;
+     top: 0;
+     left: 0;
+     z-index: 120;
+   }
+  /* Make the image fully responsive */
+  .main_header {
+    height: 100%;
+    padding: 0;
+  }
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .indicators-class {
+    display: none;
+  }
+  /* nav menu */
+  .navmenu {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    color: black;
+    margin: 0;
+    padding: 0;
+    background-size: conver;
+    background-repeat: no-repeat;
+    background: #e6e6e6;
+  }
+  .nav-link{
+    display: block;
+    height: 100%;
+    padding: 12px 18px;
+    cursor: pointer;
+  }
+  .nav-link.hoverable:hover{
+    background: lightgray;
+    color: black;
+  }
+  
+  .nav-toggle {display:none;}
+  
+  .nav-links-cont {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  
+  .mobile-navlinks-cont {display:none;}
+  
+  .toggle-btn {
+    border: 1px solid gray;
+    border-radius: 4px;
+    color: black;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  
+  .toggle-btn:active {
+    background: gray;
+    
+  }
+  
+  .logo-image {
+    border:1px solid #0f59a3;border-radius:5px;box-shadow: 1px 1px 2px #07f8b5, 0 0 25px #0b75e6, 0 0 5px #00d211;
+  }
+  
+  .signup-class {
+    margin-left: 4px;
+  }
+  
+  /* nav menu end */
+  .carousel-class {
+    z-index:0;
+    position:relative;
+  }
+  
+  .header-abover{
+    top:-20px;
+    background:rgb(245, 245, 245);
+    z-index:10;
+    position:relative;
+  }
+  .navmenu-holder {display: none;}
+  
+  
+  
+  /* images section */
+  
+  .active-img {
+    position: relative;
+    animation-name: robots;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+  
+  
+  
+  
+  @keyframes robots {
+    0%   {background-color:red; left:0px; bottom:0px;}
+    9% { transform: translate(-1px, -2px) rotate(-2deg);}
+    10%   {background-color:red; left:0px; bottom:2px;}
+    19% { transform: translate(-1px, -2px) rotate(2deg);}
+    20%  {background-color:yellow; left:0px; bottom:4px;}
+    29% { transform: translate(-1px, -2px) rotate(-2deg);}
+    30%  {background-color:yellow; left:0px; bottom:6px;}
+    39% { transform: translate(-1px, -2px) rotate(2deg);}
+    40%  {background-color:yellow; left:0px; bottom:8px;}
+    50%  {background-color:yellow; left:0px; bottom:10px;}
+    60%  {background-color:yellow; left:0px; bottom:12px;}
+    70%  {background-color:yellow; left:0px; bottom:14px;}
+    79% { transform: translate(-1px, -2px) rotate(-4deg);}
+    80%  {background-color:yellow; left:0px; bottom:16px;}
+    99% { transform: translate(-1px, -2px) rotate(4deg);}
+    100%  {background-color:yellow; left:0px; bottom:20px;}
+  }
+  
+img.logo-image:hover {
+  animation: shakelogo 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shakelogo {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-72deg); }
+  20% { transform: translate(-3px, 0px) rotate(-144deg); }
+  30% { transform: translate(3px, 2px) rotate(-216deg); }
+  40% { transform: translate(1px, -1px) rotate(-288deg); }
+  50% { transform: translate(-1px, 2px) rotate(-360deg); }
+  60% { transform: translate(-3px, 1px) rotate(360deg); }
+  70% { transform: translate(3px, 1px) rotate(288deg); }
+  80% { transform: translate(-1px, -1px) rotate(216deg); }
+  90% { transform: translate(1px, 2px) rotate(144deg); }
+  100% { transform: translate(1px, -2px) rotate(72deg); }
+}
+
+
+  /* images section end */
+  /* footer */
+  .footer-class {
+    background: #0f59a3;
+    height: max-content;
+    color: white;
+    
+  }
+  
+  .footer-warper {
+     height: 100%;
+  }
+  
+  .footer-class .social-container {
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    max-width: 250px;
+    margin-left: auto;
+  }
+  .footer-class .social-bar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-top: 5px;
+  }
+  
+    
+  .facebook {
+    background:#0080ff;
+    color:white;
+    width:40px;
+  }
+  .gmail {
+    background:#ffffcc;
+    color:orange;
+  }
+  .twiter {
+    background:#33cccc;
+    color:white;
+  }
+  .instigram {
+    background:#ff80aa;
+    color:white;
+  }
+
+  /* footer end */
+  
+  
+  /* contact  us */
+  .width-30 {width:30%}
+  
+  
+  .contact-header {
+    height: 295px;
+    
+  }
+
+  .terms-header-content{
+    background:#343a40;
+    color:white;
+    opacity:0.8;
+    width:50%;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px #07f8b5, 0 0 25px #0b75e6, 0 0 5px #00d211;
+  }
+  .contact-header-background {
+     /* The image used */
+     background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/08/3D-Robot-Wallpaper.jpg");
+
+     /* Full height */
+     height: 100%;
+
+     /* Center and scale the image nicely */
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-attachment: fixed;
+  }
+  
+
+  .active-aside-link {
+    background-color: #fafbfc;
+    border-left: 3px solid #017a9b !important;
+  }
+  
+  
+  #aside_container .aside-link-container{ 
+    color: #7d97ad;
+    
+  }
+  
+  .aside-link {
+    color: inherit;
+    cursor: pointer;
+    
+  }
+  .aside-link:hover{
+  
+    text-decoration: none;
+    color: inherit;
+   }
+  
+  div#aside_container .aside-link-container:hover{ 
+   color: #525c65;
+  }
+  
+  .aside-link:active {
+    opacity: .8;
+  }
+  
+  .topic-header {
+    color: #2e3d49;
+    font-size: 1.2em;
+
+  }
+  
+  
+  .your-active-class {
+    box-shadow: 1px 1px 2px #07f8b5, 0 0 25px #0b75e6, 0 0 5px #00d211;
+  }
+  .your-active-class .topic-header{
+      text-shadow: 1px 1px 2px #07f8b5, 0 0 25px #0b75e6, 0 0 5px #00d211;
+box-shadow: 1px 1px 2px #07f8b5, 0 0 25px #0b75e6, 0 0 5px #00d211;
+  }
+  /* contact us */
+  /* Media query */
+  
+
+
+  @media only screen and (max-width: 575px) {
+  
+    .indicators-class {
+      display: flex;
+      padding-bottom: 10px;
+    }
+    .mobile-navlinks-cont {
+       background: #0f59a3;
+       color: white;
+       display:block;
+    }
+    
+    .nav-link {
+      text-align: center;
+      color: white;
+      border: none;
+    }
+    
+    .signup-class {
+      margin-left: 0;
+    }
+    
+    .login-class:hover {
+      background: lightgray;
+      color:black;
+    }
+    
+    .signup-class:hover{
+      background: lightgray;
+      color:black;   
+    }
+  
+    .nav-logo {
+      display: inline-block;
+    }
+    .nav-toggle {
+      display: inline-block;
+      margin-left: auto;
+    }
+    
+    .carousel-class {
+      min-height: 300px;
+      height: 300px;
+      
+    }
+    .carousel-class div {height: 100%;}
+    
+    /* footer mobile */
+    .footer-warper {
+        text-align: center;
+
+    }
+     .footer-class .form-bar form{
+      display: flex;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .form-bar form input[type=email] {
+      width: 70%;
+    }
+    .form-bar form button {
+      width: 30%;
+    }
+    
+    .footer-class .social-container {
+      margin-top: 15px;
+      max-width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .footer-class .social-bar {
+      margin-top: 5px;
+      width: 100%;
+      margin: 5px;
+      
+    }
+    
+    /* contact us */
+   .contact-header {
+    height: 400px;
+    position:relative;
+    
+  } 
+  
+  /* terms */
+   #aside_container {display: none;}
+   
+   
+   /* admin style */
+   
+   .admin-aside-link {text-align: center !important;}
+  
+  }
+  /*admin style */
+  .full-width {width:100%;}
+  .admin-aside-link{
+    background: lightgray;
+    color: black;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  .admin-aside-link:hover{
+    background: gray;
+  }
+  
+  table.team_requests, table.team_edit {
+   table-layout: fixed
+  }
+  
+  table.team_requests td{
+    word-wrap: break-word;
+  }
+  table.team_edit td{
+    word-wrap: break-word;
+  }  
+  /* media query end */
+  </style>
+</head>
+<body>
+
+ <!-- nav menu -->
+<div class="navmenu-container">
+<div class="container-fluid navmenu">
+  <div class="nav-link nav-logo"><img src="https://images-platform.99static.com//mgaveJ1iz5D9riVxPYkH_VH78nU=/0x0:1000x1000/fit-in/500x500/99designs-contests-attachments/117/117320/attachment_117320637" width="40" height="10%" class="logo-image"></div>
+  <div id="desktop_cont" style="width: 100%;" class="nav-links-cont">
+    <div class="nav-link movelink hoverable">Page 2</div>
+    <div class="nav-link movelink hoverable">Page 3</div>
+    <div class="nav-link movelink hoverable">Page 4</div>
+    <div class="nav-link movelink btn btn-outline-success login-class" style="margin-left:auto;">Login</div>
+    <div class="nav-link movelink btn btn-outline-info signup-class">Register</div>
+  </div>
+
+  <div class="nav-link nav-toggle">
+    <button id="toggle_navbtn" class="toggle-btn">
+      <i class="fa fa-bars" id="bar_icon"></i>
+      <i class="fa fa-close" id="close_icon" style="display:none;"></i>
+    </button>
+  </div>
+
+</div>
+
+<div class="navmenu-holder" id="navmenu_holder">
+  <div id="mobile_cont" class="mobile-navlinks-cont">
+    <!-- Nav menu Links mobile goes here -->
+  </div>
+</div>
+</div>
+  
+<!-- nav menu end -->
+
+<!-- body flex-row-reverse -->
+<div class="container-fluid contact-header shadow p-2 mb-4 bg-white">
+  <div class="contact-header-background text-center d-flex flex-column justify-content-center align-items-center">
+    <h3 class="terms-header-content p-2">Admin Page</h3>
+  </div>
+  
+</div>
+  
+
+      
+      
+<!-- page content -->
+ <div class="container-fluid">
+   <div class="row">
+     <div class="col-sm-4 border border-success">
+       <!--aside -->
+       <div class="d-flex flex-column  align-items-start justify-content-center" style="width:100%;">
+         <div class="p-2 flex-fill full-width mb-2 mt-2 admin-aside-link">Team Requests</div>
+         <div class="p-2 flex-fill full-width mb-2 admin-aside-link">Edit Requests</div>
+         <div class="p-2 flex-fill full-width mb-2 admin-aside-link">Contact Messages</div>
+         <div class="p-2 flex-fill full-width mb-2 admin-aside-link">Site Actions</div>
+       </div>
+     </div>
+     <!-- body -->
+     <div class="col-sm-8 border border-info">
+       <!-- team requests -->
+        <div class="container">
+          <h3 class="p-2 text-center">Team Requests</h3>          
+          <table id="team_requests_table" class="table table-dark table-striped team_requests table-hover">
+            <thead>
+              <tr style="width:100px;">
+                <th>Title</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mr Robots</td>
+                <td>
+                 <button class="btn btn-info">View</button>
+                 <button class="btn btn-success">Accept</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Mary</td>
+                <td>
+                 <button class="btn btn-info">View</button>
+                 <button class="btn btn-success">Accept</button>
+                </td>
+              </tr>
+              <tr>
+                <td>July</td>
+                <td>
+                 <button class="btn btn-info">View</button>
+                 <button class="btn btn-success">Accept</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>       
+       <!-- team requests end -->
+       
+       <!-- team requests -->
+        <div class="container pt-5 pb-3">
+          <h3 class="p-2 text-center">Edit Requests</h3>          
+          <table id="team_edit_table" class="table table-dark table-striped team_edit table-hover">
+            <thead>
+              <tr style="width:100px;">
+                <th>Title</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mr Robots</td>
+                <td>
+                 <button class="btn btn-info">View</button>
+                 <button class="btn btn-success">Approve</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Mary</td>
+                <td>
+                 <button class="btn btn-info">View</button>
+                 <button class="btn btn-success">Approve</button>
+                </td>
+              </tr>
+              <tr>
+                <td>July</td>
+                <td>
+                 <button class="btn btn-info">View</button>
+                 <button class="btn btn-success">Approve</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>       
+       <!-- team requests end -->
+       
+       
+        <!-- Contact Messages -->
+        <div class="container pt-5 pb-3">
+          <h3 class="p-2 text-center">Contact Messages</h3>          
+          <table id="team_edit_table" class="table table-dark table-striped team_edit table-hover">
+            <thead>
+              <tr style="width:100px;">
+                <th>Email</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>user@gmail.com</td>
+                <td>
+                 <button class="btn btn-info">View</button>
+                 <button class="btn btn-success">Reply</button>
+                </td>
+              </tr>
+              <tr>
+                <td>user2@gmail.com</td>
+                <td>
+                 <button class="btn btn-info">View</button>
+                 <button class="btn btn-success">Reply</button>
+                </td>
+              </tr>
+              <tr>
+                <td>user3@gmail.com</td>
+                <td>
+                 <button class="btn btn-info">View</button>
+                 <button class="btn btn-success">Reply</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>       
+       <!-- team requests end -->      
+     </div>
+   </div>
+ </div>
+
+
+
+
+<!-- footer -->
+<div class="container-fluid footer-class">
+
+ <div class="row footer-warper pb-4">
+ 
+ 
+  <!-- contact form -->
+  <div class="form-bar col-sm-7 ml-3 mt-3">
+      <label for="email">Get The lastest Features:</label>
+      <form class="form-inline" action="/action_page.php">
+        <input type="email" class="form-control" placeholder="Enter Email" id="email">
+        <button type="submit" class="btn btn-danger">Submit</button>
+      </form>
+  </div>
+  
+  <!-- contact form end -->
+  
+  
+  <div>
+  
+  </div>
+
+  
+  
+  <!-- social bar -->
+  <div class="social-container col-sm-4 mt-3">
+    <span>Contact Us: </span>
+    <div class="social-bar">
+      <div class="btn btn-info facebook"><i class="fa fa-facebook"></i></div>
+      <div class="btn btn-info gmail"><i class="fa fa-google"></i></div>
+      <div class="btn btn-info btn-primary twiter"><i class="fa fa-twitter"></i></div>
+      <div class="btn btn-info instigram"><i class="fa fa-instagram"></i></div>
+    </div>
+  </div>
+  <!-- social bar end -->
+  
+ </div>
+</div>
+
+<!-- footer end -->
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    /* Global Variables */
+    const toggleNavBtn = document.querySelector("#toggle_navbtn");
+    
+    const navcontainer = document.querySelector("#navmenu_holder");
+    const navmenuMobile = document.querySelector("#mobile_cont");
+    const navmenuDesktop = document.querySelector("#desktop_cont");
+    
+    let toggleIndex = 0;
+    
+    
+    
+
+    function toggleNavMobile() {
+      const barIcon = document.querySelector("#bar_icon");
+      const closeIcon = document.querySelector("#close_icon");
+      if (toggleIndex === 0) {
+        navcontainer.style.display = "block";
+        navmenuMobile.classList.add("mobile-navlinks-cont");
+        closeIcon.style.display = "";
+        barIcon.style.display = "none";
+        toggleIndex = 1;
+      } else {
+        navcontainer.style.display = "none";
+        navmenuMobile.classList.remove("mobile-navlinks-cont");
+        closeIcon.style.display = "none";
+        barIcon.style.display = "";
+        toggleIndex = 0;
+      }
+   }
+   
+   /* 
+      This in case testing resize or resize window that make it bigger
+      return mobile menu to default closed
+   */
+   function backMenuDefault() {
+   
+      const barIcon = document.querySelector("#bar_icon");
+      const closeIcon = document.querySelector("#close_icon");
+      if (window.innerWidth > 575 || document.documentElement.clientWidth > 575) {
+        navcontainer.style.display = "none";
+        navmenuMobile.classList.remove("mobile-navlinks-cont");
+        closeIcon.style.display = "none";
+        barIcon.style.display = "";
+        toggleIndex = 0;
+      }
+      /* fix animation mobile too */
+      if (document.querySelector("img.active-img")){
+         const allActiveImages = document.querySelectorAll("img.active-img");
+         allActiveImages.forEach( (activeImg)=>{
+           activeImg.classList.remove("active-img");
+         });
+      }
+      return true;
+   }
+   
+   /* 
+     function to append nav links to the correct nav container
+     according to window width
+   */
+   function navMenuLinksFix() {
+      const allNavMenuLinks = document.querySelectorAll(".movelink");
+      if (window.innerWidth > 575 || document.documentElement.clientWidth > 575) {
+        allNavMenuLinks.forEach( (navLink)=>{
+          navmenuDesktop.appendChild(navLink);
+        });
+      } else {
+        allNavMenuLinks.forEach( (navLink)=>{
+          navmenuMobile.appendChild(navLink);
+        });
+        
+      }
+      return true;
+   }
+
+  
+   toggleNavBtn.addEventListener("click", toggleNavMobile);
+   window.addEventListener("resize", backMenuDefault);
+   window.addEventListener("resize", navMenuLinksFix);
+   navMenuLinksFix();
+  
+
+    /* end helper */
+    
+
+
+  });
+</script>
+</body>
+</html>
