@@ -408,16 +408,14 @@ box-shadow: 1px 1px 2px #07f8b5, 0 0 25px #0b75e6, 0 0 5px #00d211;
     background: gray;
   }
   
-  table.team_requests, table.team_edit {
+  table.admin_table {
    table-layout: fixed
   }
   
-  table.team_requests td{
+  table.admin_table td{
     word-wrap: break-word;
   }
-  table.team_edit td{
-    word-wrap: break-word;
-  }  
+
   /* media query end */
   </style>
 </head>
@@ -470,10 +468,10 @@ box-shadow: 1px 1px 2px #07f8b5, 0 0 25px #0b75e6, 0 0 5px #00d211;
      <div class="col-sm-4 border border-success">
        <!--aside -->
        <div class="d-flex flex-column  align-items-start justify-content-center" style="width:100%;">
-         <div class="p-2 flex-fill full-width mb-2 mt-2 admin-aside-link">Team Requests</div>
-         <div class="p-2 flex-fill full-width mb-2 admin-aside-link">Edit Requests</div>
-         <div class="p-2 flex-fill full-width mb-2 admin-aside-link">Contact Messages</div>
-         <div class="p-2 flex-fill full-width mb-2 admin-aside-link">Site Actions</div>
+         <div class="p-2 flex-fill full-width mb-2 mt-2 admin-aside-link" id="team_req_link">Team Requests</div>
+         <div class="p-2 flex-fill full-width mb-2 admin-aside-link" id="edit_req_link">Edit Requests</div>
+         <div class="p-2 flex-fill full-width mb-2 admin-aside-link" id="contact_link">Contact Messages</div>
+         <div class="p-2 flex-fill full-width mb-2 admin-aside-link" id="notifications_link">Notifications</div>
        </div>
      </div>
      <!-- body -->
@@ -481,9 +479,9 @@ box-shadow: 1px 1px 2px #07f8b5, 0 0 25px #0b75e6, 0 0 5px #00d211;
        <!-- team requests -->
         <div class="container">
           <h3 class="p-2 text-center">Team Requests</h3>          
-          <table id="team_requests_table" class="table table-dark table-striped team_requests table-hover">
+          <table id="team_requests_table" class="table table-dark table-striped admin_table table-hover">
             <thead>
-              <tr style="width:100px;">
+              <tr>
                 <th>Title</th>
                 <th>Actions</th>
               </tr>
@@ -515,12 +513,12 @@ box-shadow: 1px 1px 2px #07f8b5, 0 0 25px #0b75e6, 0 0 5px #00d211;
         </div>       
        <!-- team requests end -->
        
-       <!-- team requests -->
+       <!-- Edit requests -->
         <div class="container pt-5 pb-3">
           <h3 class="p-2 text-center">Edit Requests</h3>          
-          <table id="team_edit_table" class="table table-dark table-striped team_edit table-hover">
+          <table id="team_edit_table" class="table table-dark table-striped admin_table table-hover">
             <thead>
-              <tr style="width:100px;">
+              <tr>
                 <th>Title</th>
                 <th>Actions</th>
               </tr>
@@ -550,15 +548,15 @@ box-shadow: 1px 1px 2px #07f8b5, 0 0 25px #0b75e6, 0 0 5px #00d211;
             </tbody>
           </table>
         </div>       
-       <!-- team requests end -->
+       <!-- Edit requests end -->
        
        
-        <!-- Contact Messages -->
+        <!-- Contact Messages -->  
         <div class="container pt-5 pb-3">
           <h3 class="p-2 text-center">Contact Messages</h3>          
-          <table id="team_edit_table" class="table table-dark table-striped team_edit table-hover">
+          <table id="contact_table" class="table table-dark table-striped admin_table table-hover">
             <thead>
-              <tr style="width:100px;">
+              <tr>
                 <th>Email</th>
                 <th>Actions</th>
               </tr>
@@ -588,13 +586,184 @@ box-shadow: 1px 1px 2px #07f8b5, 0 0 25px #0b75e6, 0 0 5px #00d211;
             </tbody>
           </table>
         </div>       
-       <!-- team requests end -->      
+       <!-- Contact Messages end -->
+       
+        <!-- Members Notifications -->
+        <div class="container pt-5 pb-3"> 
+          <h3 class="p-2 text-center">Members Notifications</h3>          
+          <table id="notifications_table" class="table table-dark table-striped admin_table table-hover">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mr Robots</td>
+                <td>
+                 <button class="btn btn-success full-width">Send</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Mr Robots</td>
+                <td>
+                 <button class="btn btn-success full-width">Send</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Mr Robots</td>
+                <td>
+                 <button class="btn btn-success full-width">Send</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>       
+       <!-- Members Notifications end -->       
      </div>
    </div>
  </div>
 
 
+<!-- modals -->
 
+  <!-- View Team Requests -->
+  <div class="modal fade" id="team_request_view">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Team Requests</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!-- View Team Requests end -->
+  
+  <!-- View Edit Requests -->
+  <div class="modal fade" id="edit_request_view">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Edit Requests</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!-- View Edit Requests end -->
+  
+
+  <!-- View Contact Messages -->
+  <div class="modal fade" id="view_contact_message">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Contact Messages</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!-- View Contact Messages end -->
+  
+
+  <!-- Reply Contact Messages -->
+  <div class="modal fade" id="reply_contact_message">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Send Messages</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!-- Reply Contact Messages end -->
+  
+
+
+  <!-- Send Notification -->
+  <div class="modal fade" id="send_notification">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Send Notification</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!-- Send Notification end -->
+  
+  
+<!-- end modals -->
 
 <!-- footer -->
 <div class="container-fluid footer-class">
@@ -721,8 +890,31 @@ box-shadow: 1px 1px 2px #07f8b5, 0 0 25px #0b75e6, 0 0 5px #00d211;
   
 
     /* end helper */
-    
+   
+    /* Admin Script */
+    const teamRequestLink = document.getElementById("team_req_link");
+    const teamEditLink = document.getElementById("edit_req_link");
+    const contactMessageLink = document.getElementById("contact_link");
+    const notificationsLink = document.getElementById("notifications_link");
 
+    const teamRequestTable = document.getElementById("team_requests_table");
+    const teamEditLinkTable = document.getElementById("team_edit_table");
+    const contactMessageTable = document.getElementById("contact_table");
+    const notificationsTable = document.getElementById("notifications_table");
+    
+    teamRequestLink.addEventListener("click", ()=>{
+      teamRequestTable.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+    });
+    teamEditLink.addEventListener("click", ()=>{
+      teamEditLinkTable.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+    });
+    contactMessageLink.addEventListener("click", ()=>{
+      contactMessageTable.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+    });
+    notificationsLink.addEventListener("click", ()=>{
+      notificationsTable.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+    });    
+    
 
   });
 </script>
